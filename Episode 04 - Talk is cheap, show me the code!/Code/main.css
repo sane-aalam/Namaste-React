@@ -1,0 +1,111 @@
+
+.wrapperHeader{
+    width: 100vw;
+    height: 122px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 32px;
+    border-bottom: 1px solid black;
+}
+
+.Header{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    width: 100vw;
+}
+
+.res-logo{
+    width: 150px;
+    margin-left: 40px;
+}
+
+.res-logo img{
+    width: 150px;
+    height: 48.48px;
+}
+
+.navItems{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+}
+
+.nav-item{
+    color: #02060CBF;
+    font-size: 18px;
+    font-family: sans-serif,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight:500;
+    margin: 0px 16px;
+    padding: 6px 0px;
+    transition: all 1.ms;
+}
+
+.nav-item:hover{
+    color: #ff5200;
+    border-bottom: 4px solid #ff5200;
+}
+
+.res-list{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 180px;
+    width: 1350px;
+}
+
+.restaurant_card{
+    width: 251.48px;
+    height: 300.98px;
+    margin: 32px 20px;
+    border: 1px solid black;
+}
+
+.res-img{
+    width: 249px;
+    height: 166px;
+}
+
+.section-2{
+    padding-top: 10px;
+    margin-left: 10px;
+}
+
+.title-card{
+    font-size: 18px;
+    color: #02060CEB;
+}
+
+.delivery-section{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5;
+    padding-top: 10px;
+}
+
+.delivery-section span{
+    background-color: green;
+    color: white;
+}
+
+.delivery-section p{
+    font-size: 16px;
+    font-weight: bold;
+    color: #02060CEB;
+}
+
+.location-section{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 5;
+}
+
+.location-section p{
+    font-size: 16px;
+    color: #02060C99;
+    margin-top: 4px;
+}
