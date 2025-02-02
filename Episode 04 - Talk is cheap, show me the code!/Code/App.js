@@ -420,7 +420,7 @@ const Header = () => {
   );
 };
 
-// 🙂 To maintain the swiggy limit chars only limit 22)
+// To maintain the swiggy limit chars only limit 22)
 // let name = "Leon's - Burgers & Wings (Leon Grill)"
 // console.log(name.slice(0, 22))
 // console.log(name.length > 22?"---":"-")
@@ -479,33 +479,40 @@ const RestaurantCard = (props) => {
   );
 };
 
-// Don't Repeat yourself 
-// 
-const RestaurantList = () => {
-  return (
-    <div className="res-list">
-      <RestaurantCard key={0} restaurantData={restaurantList[0]} />
-      <RestaurantCard key={1} restaurantData={restaurantList[1]} />
-      <RestaurantCard key={2} restaurantData={restaurantList[2]} />
-      <RestaurantCard key={3} restaurantData={restaurantList[3]} />
-      <RestaurantCard key={4} restaurantData={restaurantList[4]} />
-      <RestaurantCard key={5} restaurantData={restaurantList[5]} />
-      <RestaurantCard key={6} restaurantData={restaurantList[6]} />
-      <RestaurantCard key={7} restaurantData={restaurantList[7]} />
-    </div>
-  );
-};
+// Don't Repeat yourself (PRINCIPLE)
+// Don't Repeat Yourself" (DRY) is a software development principle that encourages developers to avoid duplicating code in a system.
+// The main idea behind DRY is to reduce redundancy and promote efficiency by ensuring that a particular piece of knowledge or logic exists in only one place within a codebase.
+// When developers adhere to the DRY principle, they aim to create reusable components, functions, or modules that can be utilized in various parts of the codebase.
 
 // const RestaurantList = () => {
 //   return (
 //     <div className="res-list">
-
-//       {restaurantList.map((restaurant) => (
-//         <RestaurantCard key={restaurant.info.id} restaurantData={restaurant} />
-//       ))}
+//       <RestaurantCard key={0} restaurantData={restaurantList[0]} />
+//       <RestaurantCard key={1} restaurantData={restaurantList[1]} />
+//       <RestaurantCard key={2} restaurantData={restaurantList[2]} />
+//       <RestaurantCard key={3} restaurantData={restaurantList[3]} />
+//       <RestaurantCard key={4} restaurantData={restaurantList[4]} />
+//       <RestaurantCard key={5} restaurantData={restaurantList[5]} />
+//       <RestaurantCard key={6} restaurantData={restaurantList[6]} />
+//       <RestaurantCard key={7} restaurantData={restaurantList[7]} />
 //     </div>
 //   );
 // };
+
+// Please Map method used to render all components(All).
+// Why we have to pass key?
+// - react optimize the render cycle
+// - effectivly dom manuplation(DOM)
+
+const RestaurantList = () => {
+  return (
+    <div className="res-list">
+      {restaurantList.map((restaurant) => (
+        <RestaurantCard key={restaurant.info.id} restaurantData={restaurant} />
+      ))}
+    </div>
+  );
+};
 
 const AppLayout = () => {
   return (
