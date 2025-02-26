@@ -1,5 +1,5 @@
 .wrapperHeader{
-    width: 100vw;
+    width: 98.9vw;
     height: 122px;
     display: flex;
     justify-content: space-between;
@@ -11,14 +11,12 @@
 .Header{
     display: flex;
     justify-content: space-between;
-    padding-top: 32px;
-    padding-bottom: 32px;
-    width: 100vw;
+    margin-left: 10rem;
+    margin-right: 10rem;
 }
 
 .res-logo{
     width: 150px;
-    margin-left: 40px;
 }
 
 .res-logo img{
@@ -30,7 +28,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1200px;
+    width: 900px;
+    margin-left: 5rem;
 }
 
 .nav-item{
@@ -46,4 +45,28 @@
 .nav-item:hover{
     color: #ff5200;
     border-bottom: 4px solid #ff5200;
+}
+
+.login-button{
+    border-color: #ff5200;
+    border-radius: 5px;
+    background-color: white;
+    font-family: sans-serif;
+    color: #ff5200;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.15385;
+    margin: 0;
+    outline: none;
+    padding: 8px .8em;
+    transition: all 1ms;
+}
+
+.login-button:hover{
+    background-color: #ff5200;
+    color: white;
+    border-radius: 5px;
 }

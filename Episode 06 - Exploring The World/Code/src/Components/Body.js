@@ -3,13 +3,18 @@ import { useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import SimmerEffect from "./SimmerEffect";
 
+// You have to maintain the state of the filtered data, so that the data is not lost when the user searches for a restaurant or filters the data
 // concepts(copy data only changed not original data is changed!)
 // call by value
 // call by reference
 
 const Body = () => {
   const [restaurants, setRestaurants] = useState([]);
+  const [filteredResaurantList, setFilteredResaurantList] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
+  // useEffect() is a hook that takes a function and an array of dependencies as arguments.
+  // It calls the function whenever one of the dependencies changes.
   useEffect(() => {
     fetchSwiggyRealTimeData();
   }, []);
@@ -27,6 +32,12 @@ const Body = () => {
       jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
+
+    // call by value
+    setFilteredResaurantList(
+      jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
   }
 
   if (restaurants.length == 0) {
@@ -35,20 +46,49 @@ const Body = () => {
     return (
       <div className="main-body">
         <div className="top-rating-button">
-          <button
-            onClick={() => {
-              const restaurantFilterData = restaurants.filter((res) => {
-                return res.info.avgRating > 4.5;
-              });
-              console.log(restaurantFilterData);
-              setRestaurants(restaurantFilterData);
-            }}
-          >
-            Best Restaurants in Agra - Top Ratings
-          </button>
+          <div className="search-restaurants">
+            <input
+              type="text"
+              name=""
+              className="seach-box"
+              value={searchText}
+              onChange={(e) => {
+                setSearchText(e.target.value);
+              }}
+            />
+            <button
+              className="search-button"
+              onClick={() => {
+                const SearchfilterResaurant = restaurants.filter((res) => {
+                  // convert into lowercase - case insensitive search
+                  return res.info.name
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase());
+                });
+                console.log(SearchfilterResaurant);
+                setFilteredResaurantList(SearchfilterResaurant);
+              }}
+            >
+              Search Restaurants
+            </button>
+          </div>
+          <div className="filter-restaurants">
+            <button
+              onClick={() => {
+                const restaurantFilterData = filteredResaurantList.filter(
+                  (res) => {
+                    return res.info.avgRating >= 4.7;
+                  }
+                );
+                setFilteredResaurantList(restaurantFilterData);
+              }}
+            >
+              Best Restaurants in Agra - Top Ratings
+            </button>
+          </div>
         </div>
         <div className="res-list">
-          {restaurants.map((restaurant) => (
+          {filteredResaurantList.map((restaurant) => (
             <RestaurantCard
               key={restaurant.info.id}
               restaurantData={restaurant}

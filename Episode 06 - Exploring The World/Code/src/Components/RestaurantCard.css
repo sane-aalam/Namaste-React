@@ -3,11 +3,15 @@
 }
 
 .top-rating-button{
-    margin-left: 10rem;
+    margin-left: 12.5rem;
+    margin-right: 12.5rem;
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.top-rating-button button{
+.filter-restaurants button{
     border: 1px solid gray;
     border-radius: 3px;
     box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
@@ -19,7 +23,33 @@
     font-size: 14px;
     font-weight: bold;
     line-height: 1.15385;
-    margin: 0;
+    margin-left: 10px;
+    outline: none;
+    padding: 8px .8em;
+}
+
+.search-restaurants .search-button{
+    border: 1px solid gray;
+    border-radius: 3px;
+    box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #02060CBF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.15385;
+    outline: none;
+    padding: 8px .8em;
+}
+
+.seach-box{
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.15385;
     outline: none;
     padding: 8px .8em;
 }
@@ -83,4 +113,8 @@
     font-size: 16px;
     color: #02060C99;
     margin-top: 4px;
+}
+
+.seach-box{
+    padding: 7px;
 }

@@ -9,10 +9,16 @@ import { LOGO_URL } from "../Utils/CommonFile";
 // - calculate the diff algorithm (privous)
 
 const Header = () => {
-  const [LoginToggleButton, setLoginToggleButton] = useState("Login");
-  function ReactNameModification() {
-    setLoginToggleButton("LogOut");
-  }
+  const [LoginToggleButton, setLoginToggleButton] = useState("Sign In");
+  console.log("body render");
+
+  const buttonModification = () => {
+    if (LoginToggleButton === "Sign In") {
+      setLoginToggleButton("Sign Out");
+    } else {
+      setLoginToggleButton("Sign In");
+    }
+  };
 
   return (
     <div className="wrapperHeader">
@@ -22,13 +28,11 @@ const Header = () => {
         </div>
         <div className="navItems">
           <p className="nav-item">Home</p>
-          <p className="nav-item">About Swiggy</p>
-          <p className="nav-item">Delivering For Everyone</p>
-          <p className="nav-item">Newsroom</p>
+          <p className="nav-item">Swiggy Corporate</p>
+          <p className="nav-item">Offers</p>
+          <p className="nav-item">Help</p>
           <p className="nav-item">Contact Us</p>
-          <p className="nav-item">Card</p>
-          <p className="nav-item">Sustainability</p>
-          <button onClick={() => ReactNameModification()}>
+          <button className="login-button" onClick={() => buttonModification()}>
             {LoginToggleButton}
           </button>
         </div>
