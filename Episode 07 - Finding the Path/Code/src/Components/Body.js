@@ -23,11 +23,15 @@ const Body = () => {
   // This Promise resolves to a Response object if the request is successful.
   async function fetchSwiggyRealTimeData() {
     const url =
-      "https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING";
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=27.87960&lng=78.07620&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
     const response = await fetch(url);
     const jsonData = await response.json();
 
     // officall channing in javascript
+    // Using real time API - Swiggy api
+    // hard to read swiggy api but cool
+    // jsondata.data.cards[1].card.card.gridElements.infowithstyle.restuarants
+    
     setRestaurants(
       jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants

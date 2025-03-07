@@ -40,6 +40,7 @@
     margin: 0px 16px;
     padding: 6px 0px;
     transition: all 1.ms;
+    text-decoration: none;
 }
 
 .nav-item:hover{

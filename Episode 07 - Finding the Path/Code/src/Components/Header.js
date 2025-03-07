@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Header.css";
 import { LOGO_URL } from "../Utils/CommonFile";
+import { Link } from "react-router-dom";
 
 // Using React State Variable
 // Const[btnReact,setBtnReact] = usestate();
@@ -41,11 +42,17 @@ const Header = () => {
           />
         </div>
         <div className="navItems">
-          <p className="nav-item">Home</p>
-          <p className="nav-item">Swiggy Corporate</p>
-          <p className="nav-item">Offers</p>
-          <p className="nav-item">About</p>
-          <p className="nav-item">Contact Us</p>
+          <Link to="" className="nav-item">
+            Home
+          </Link>
+          <Link className="nav-item">Swiggy CorLinkorate</Link>
+          <Link className="nav-item">Offers</Link>
+          <Link to="about" className="nav-item">
+            About
+          </Link>
+          <Link to="/contact" className="nav-item">
+            Contact Us
+          </Link>
           <button className="login-button" onClick={() => buttonModification()}>
             {LoginToggleButton}
           </button>

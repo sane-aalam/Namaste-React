@@ -1,10 +1,12 @@
-.body404 {
+.aboutSection {
     padding: 50px;
     text-align: center;
     background-color: #003d29;
 }
-.body404 h3 p{
+.aboutSection h1{
     background-color: #003d29;
     color: white;
+    border: 1px solid white;
+    margin-top: 5px;
     font-family: sans-serif;
 }
