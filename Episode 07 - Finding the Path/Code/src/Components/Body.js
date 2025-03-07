@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import SimmerEffect from "./SimmerEffect";
+import React from "react";
 
 // You have to maintain the state of the filtered data, so that the data is not lost when the user searches for a restaurant or filters the data
 // concepts(copy data only changed not original data is changed!)
@@ -28,10 +29,6 @@ const Body = () => {
     const jsonData = await response.json();
 
     // officall channing in javascript
-    // Using real time API - Swiggy api
-    // hard to read swiggy api but cool
-    // jsondata.data.cards[1].card.card.gridElements.infowithstyle.restuarants
-    
     setRestaurants(
       jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
@@ -39,6 +36,13 @@ const Body = () => {
 
     // call by value
     setFilteredResaurantList(
+      jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
+
+    // We don’t have any services here till now. Try changing location.
+    // Soon it will work
+    console.log(
       jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
@@ -81,7 +85,7 @@ const Body = () => {
               onClick={() => {
                 const restaurantFilterData = filteredResaurantList.filter(
                   (res) => {
-                    return res.info.avgRating >= 4.5;
+                    return res.info.avgRating >= 4.7;
                   }
                 );
                 setFilteredResaurantList(restaurantFilterData);
