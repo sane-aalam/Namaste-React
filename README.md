@@ -1,4 +1,3 @@
-Sure! Here's a refreshed version of your GitHub README with the guidelines and episode breakdown:
 
 # Namaste React 🚀
 
@@ -220,4 +219,4 @@ Before you begin your React journey, here are a few important guidelines:
 
 - Session on crafting a resume, interview prep, and salary negotiation strategies.
 
-Happy coding and best of luck on your React journey! 🚀
+Happy coding and best of luck on your React journey!
