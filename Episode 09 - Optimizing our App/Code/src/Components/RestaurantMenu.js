@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./RestaurantMenu.css";
 import SimmerEffect from "./SimmerEffect";
 import React from "react";
-import { MENU_URL } from "../Utils/CommonFile";
+import useRestaurantMenu from "../Utils/useRestaurantMenu";
 
 // *documents
 // As you know, we are using clinet-side-routing
@@ -11,23 +10,17 @@ import { MENU_URL } from "../Utils/CommonFile";
 // here we need to used useParams();
 
 const RestaurantMenu = () => {
-  const [restaurantInfo, setRestaurantInfo] = useState(null);
   const { resId } = useParams();
 
-  const fetchMenusData = async () => {
-    const data = await fetch(MENU_URL + resId);
-    const json = await data.json();
-    setRestaurantInfo(json?.data);
-  };
-
-  useEffect(() => {
-    fetchMenusData();
-  }, [resId]);
+  //! custom hook:
+  // each component is focused on a specific task
+  const restaurantInfo = useRestaurantMenu(resId);
 
   if (restaurantInfo === null) {
     return <SimmerEffect />;
   }
 
+  // object understanding of fetech data
   const { id, name, city, costForTwo, cuisines, avgRating, sla } =
     restaurantInfo?.cards[2]?.card?.card?.info;
 
@@ -37,11 +30,10 @@ const RestaurantMenu = () => {
   let itemCards =
     cards.find((fullcard) => fullcard?.card?.card?.itemCards)?.card?.card
       ?.itemCards || [];
-  console.log(itemCards);
 
   return (
     <div className="restaurant-menu">
-      <h1>RestaurantMenu: {name}</h1>
+      <h1 className="restaurant-title">RestaurantMenu: {name}</h1>
       <br />
       <ul>
         <p>id : {id}</p>
@@ -49,18 +41,18 @@ const RestaurantMenu = () => {
         <p>costforTwo : {costForTwo / 100}</p>
         <p>avgRating : {avgRating}</p>
         <p>deliveryTime : {sla.deliveryTime}</p>
-        <p>cuisines : {cuisines}</p>
+        <p>cuisines : {cuisines.join(", ")}</p>
         <br />
       </ul>
-      <h1>Menu :: </h1>
+      <h1 className="restaurant-title">Menu: </h1>
       <br />
-      <ul>
+      <ol>
         {itemCards.map((item) => (
           <li key={item.card.info.id}>
             {item.card.info.name} - Rs/- {item.card.info.defaultPrice / 100}
           </li>
         ))}
-      </ul>
+      </ol>
     </div>
   );
 };
