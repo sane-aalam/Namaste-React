@@ -54,20 +54,20 @@ const Body = () => {
     return <SimmerEffect />;
   } else
     return (
-      <div className="main-body">
-        <div className="top-rating-button">
-          <div className="search-restaurants">
+      <div>
+        <div className="flex m-4 ml-20">
+          <div className="">
             <input
               type="text"
               name=""
-              className="seach-box"
+              className="border-2 py-2 px-1 text-1xl"
               value={searchText}
               onChange={(e) => {
                 setSearchText(e.target.value);
               }}
             />
             <button
-              className="search-button"
+              className="border-1 border-gray-400 bg-gray-200 font-lg py-2 px-1"
               onClick={() => {
                 const SearchfilterResaurant = restaurants.filter((res) => {
                   // convert into lowercase - case insensitive search
@@ -82,8 +82,9 @@ const Body = () => {
               Search Restaurants
             </button>
           </div>
-          <div className="filter-restaurants">
+          <div>
             <button
+              className="border-1 border-gray-400 bg-gray-200 font-lg py-2 px-1 ml-5"
               onClick={() => {
                 const restaurantFilterData = filteredResaurantList.filter(
                   (res) => {
@@ -97,7 +98,7 @@ const Body = () => {
             </button>
           </div>
         </div>
-        <div className="res-list">
+        <div className="flex flex-wrap gap-5 mt-5 py-4 ml-20 mr-10">
           {filteredResaurantList.map((restaurant) => (
             <RestaurantCard
               key={restaurant.info.id}
