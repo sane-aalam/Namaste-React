@@ -1,5 +1,4 @@
 import React from "react";
-import "./RestaurantCard.css";
 import { CDN_URL } from "../Utils/CommonFile";
 
 const RestaurantCard = (props) => {
@@ -13,7 +12,10 @@ const RestaurantCard = (props) => {
     cuisines,
     costForTwo,
     deliveryTime,
-  } = restaurantData?.info;
+  } = restaurantData?.info; 
+
+  console.log("res-name", name);
+  console.log(deliveryTime);
 
   return (
     <div className="restaurant_card">

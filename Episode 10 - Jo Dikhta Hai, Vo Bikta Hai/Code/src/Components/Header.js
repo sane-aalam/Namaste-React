@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./Header.css";
 import { LOGO_URL } from "../Utils/CommonFile";
 import { Link } from "react-router-dom";
 
@@ -37,8 +36,10 @@ const Header = () => {
       <div className="Header">
         <div className="res-logo">
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRnwHX3pDRe8GY2BPO59k-54CcbnU46H-v9w&s"
+            src="https://logos-world.net/wp-content/uploads/2020/11/Uber-Eats-Logo.png"
             alt=""
+            width={"200px"}
+            height={"200px"}
           />
         </div>
         <div className="navItems">

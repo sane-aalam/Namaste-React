@@ -1,4 +1,3 @@
-import "./About.css";
 import UserFunction from "./UserFunction";
 import UserClass from "./UserClass";
 
