@@ -19,8 +19,11 @@
   "author": "Sane-Aalam",
   "license": "ISC",
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
     "parcel": "^2.13.3",
-    "process": "^0.11.10"
+    "postcss": "^8.5.3",
+    "process": "^0.11.10",
+    "tailwindcss": "^4.1.0"
   },
   "dependencies": {
     "react": "^19.0.0",

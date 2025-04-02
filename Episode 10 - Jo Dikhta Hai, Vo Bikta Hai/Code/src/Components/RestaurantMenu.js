@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import "./RestaurantMenu.css";
 import SimmerEffect from "./SimmerEffect";
 import React from "react";
 import useRestaurantMenu from "../Utils/useRestaurantMenu";

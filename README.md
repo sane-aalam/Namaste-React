@@ -1,4 +1,3 @@
-
 # Namaste React 🚀
 
 Welcome to the **Namaste React** journey! This repository is a comprehensive guide designed to walk you through the fundamentals and advanced topics of React. Whether you're a beginner or looking to enhance your skills, this series will help you build solid React knowledge step by step.

@@ -38,8 +38,9 @@ const Header = () => {
           <img
             src="https://logos-world.net/wp-content/uploads/2020/11/Uber-Eats-Logo.png"
             alt=""
-            width={"200px"}
+            width={"100px"}
             height={"200px"}
+            className="border-1"
           />
         </div>
         <div className="navItems">

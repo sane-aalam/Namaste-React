@@ -29,84 +29,84 @@ const Body = () => {
     const jsonData = await response.json();
 
     console.log(jsonData);
-    console.log(jsonData.data.cards[3].card.card);
 
     // officall channing in javascript
     setRestaurants(
-      jsonData?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
+      jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
 
     // call by value
     setFilteredResaurantList(
-      jsonData?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
+      jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
 
     // We don’t have any services here till now. Try changing location.
     // Soon it will work
     console.log(
-      jsonData?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
+      jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
   }
 
-  return restaurants && restaurants.length == 0 ? (
-    <SimmerEffect />
-  ) : (
-    <div className="main-body">
-      <div className="top-rating-button">
-        <div className="search-restaurants">
-          <input
-            type="text"
-            name=""
-            className="seach-box"
-            value={searchText}
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
-          />
-          <button
-            className="search-button"
-            onClick={() => {
-              const SearchfilterResaurant = restaurants.filter((res) => {
-                // convert into lowercase - case insensitive search
-                return res.info.name
-                  .toLowerCase()
-                  .includes(searchText.toLowerCase());
-              });
-              console.log(SearchfilterResaurant);
-              setFilteredResaurantList(SearchfilterResaurant);
-            }}
-          >
-            Search Restaurants
-          </button>
+  if (restaurants.length == 0) {
+    return <SimmerEffect />;
+  } else
+    return (
+      <div className="main-body">
+        <div className="top-rating-button">
+          <div className="search-restaurants">
+            <input
+              type="text"
+              name=""
+              className="seach-box"
+              value={searchText}
+              onChange={(e) => {
+                setSearchText(e.target.value);
+              }}
+            />
+            <button
+              className="search-button"
+              onClick={() => {
+                const SearchfilterResaurant = restaurants.filter((res) => {
+                  // convert into lowercase - case insensitive search
+                  return res.info.name
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase());
+                });
+                console.log(SearchfilterResaurant);
+                setFilteredResaurantList(SearchfilterResaurant);
+              }}
+            >
+              Search Restaurants
+            </button>
+          </div>
+          <div className="filter-restaurants">
+            <button
+              onClick={() => {
+                const restaurantFilterData = filteredResaurantList.filter(
+                  (res) => {
+                    return res.info.avgRating >= 4.7;
+                  }
+                );
+                setFilteredResaurantList(restaurantFilterData);
+              }}
+            >
+              Best Restaurants in Agra - Top Ratings
+            </button>
+          </div>
         </div>
-        <div className="filter-restaurants">
-          <button
-            onClick={() => {
-              const restaurantFilterData = filteredResaurantList.filter(
-                (res) => {
-                  return res.info.avgRating >= 4.7;
-                }
-              );
-              setFilteredResaurantList(restaurantFilterData);
-            }}
-          >
-            Best Restaurants in Agra - Top Ratings
-          </button>
+        <div className="res-list">
+          {filteredResaurantList.map((restaurant) => (
+            <RestaurantCard
+              key={restaurant.info.id}
+              restaurantData={restaurant}
+            />
+          ))}
         </div>
       </div>
-      <div className="res-list">
-        {filteredResaurantList.map((restaurant) => (
-          <RestaurantCard
-            key={restaurant.info.id}
-            restaurantData={restaurant}
-          />
-        ))}
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Body;
