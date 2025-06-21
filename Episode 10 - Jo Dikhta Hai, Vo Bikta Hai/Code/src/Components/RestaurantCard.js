@@ -17,14 +17,14 @@ const RestaurantCard = (props) => {
   console.log(deliveryTime);
 
   return (
-    <div className="bg-gray-200 mt-7">
+    <div className="bg-gray-200 p-4">
       <div className="rounded-sm">
         <img
           src={CDN_URL + cloudinaryImageId}
           alt=""
           width="250px"
           height="160px"
-          className="w-[249px] h-[166px] rounded-sm"
+          className="w-[279px] h-[176px] rounded-sm"
         />
       </div>
       <div className="mt-1 ml-1">
@@ -32,7 +32,7 @@ const RestaurantCard = (props) => {
           {name.slice(0, 22)}
           {name.length > 22 ? "..." : ""}
         </h3>
-        <div className="flex justify-between">
+        <div className="flex justify-between pt-2">
           <div className="flex">
             <span
               className="star-rating-color"
@@ -41,19 +41,19 @@ const RestaurantCard = (props) => {
             >
               star
             </span>
-            <p className="pl-1">{avgRating}</p>
+            <p className="pl-2">{avgRating}</p>
           </div>
           <p>{costForTwo}</p>
-          <p className="pr-1">
+          <p className="pr-2 text-base">
             {deliveryTime === undefined ? "30" : deliveryTime} mins
           </p>
         </div>
-        <div className="text-sm pt-1">
+        <div className="text-base pt-2">
           <p>
             {cuisines.join(", ").slice(0, 30)}
             {cuisines.join(", ").length > 30 ? "..." : ""}
           </p>
-          <p>{areaName}</p>
+          <p className="text-base pt-2">{areaName}</p>
         </div>
       </div>
     </div>

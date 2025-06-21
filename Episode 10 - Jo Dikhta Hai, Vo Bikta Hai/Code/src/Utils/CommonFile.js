@@ -2,7 +2,8 @@
 // It is good pratice to put all Name Capital Letter
 
 export const LOGO_URL =
-  "https://www.swiggy.com/corporate/wp-content/uploads/2024/10/swiggy-logo.webp";
+  "https://i.pinimg.com/736x/43/6a/1a/436a1abbd5a2cb77e4bdaec234e3a0e3.jpg";
+
 export const CDN_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 

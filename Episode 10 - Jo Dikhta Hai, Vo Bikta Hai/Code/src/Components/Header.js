@@ -19,42 +19,42 @@ const Header = () => {
   };
 
   return (
-    <div className="w-[99vw] h-[110px] border-b-2">
-      <div className="flex justify-between content-center items-center bg-white-400 h-[109px]">
+    <div className="w-[99vw] h-[120px] bg-white">
+      <div className="flex justify-between content-center items-center bg-white h-[109px] ml-10 mr-10">
         <div className="w-1xl pl-15">
           <img
-            src="https://logos-world.net/wp-content/uploads/2020/11/Uber-Eats-Logo.png"
+            src={LOGO_URL}
             alt=""
-            width={"100px"}
-            height={"200px"}
+            width={"120px"}
+            height={"210px"}
             className=""
           />
         </div>
         <div className=" flex justify-between content-center w-4xl items-center mr-15">
           <Link
             to=""
-            className="text-[#003d29] hover:border-b-2 border-b-[#003d29]"
+            className="text-[#003d29] text-lg hover:border-b-2 border-b-[#003d29]"
           >
             Home
           </Link>
-          <Link className="text-[#003d29] hover:border-b-2 border-b-[#003d29]">
+          <Link className="text-[#003d29] text-lg hover:border-b-2 border-b-[#003d29]">
             Swiggy CorLinkorate
           </Link>
-          <Link className="text-[#003d29]">Offers</Link>
+          <Link className="text-[#003d29] text-lg hover:border-b-2 border-b-[#003d29]">Offers</Link>
           <Link
             to="about"
-            className="text-[#003d29] hover:border-b-2 border-b-[#003d29]"
+            className="text-[#003d29] text-lg hover:border-b-2 border-b-[#003d29]"
           >
             About
           </Link>
           <Link
             to="/contact"
-            className="text-[#003d29] hover:border-b-2 border-b-[#003d29]"
+            className="text-[#003d29] text-lg hover:border-b-2 border-b-[#003d29]"
           >
             Contact Us
           </Link>
           <button
-            className=" bg-blue-500 text-white hover:bg-[#003d29] font-bold py-2 px-4 rounded"
+            className=" bg-green-500 text-white text-lg hover:bg-white hover:text-green-500 hover:border-2 hover:border-green-500 font-bold py-2 px-4 rounded"
             onClick={() => buttonModification()}
           >
             {LoginToggleButton}

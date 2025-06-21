@@ -53,20 +53,20 @@ const Body = () => {
     return <SimmerEffect />;
   } else
     return (
-      <div>
-        <div className="flex m-4 ml-20">
+      <div className="mr-5 ml-5">
+        <div className="flex justify-center gap-5 items-center m-4 ml-20 mr-20 ">
           <div className="">
             <input
               type="text"
               name=""
-              className="border-2 py-2 px-1 text-1xl"
+              className="border-2 py-2 px-1 ml-5 mr-5 text-1xl"
               value={searchText}
               onChange={(e) => {
                 setSearchText(e.target.value);
               }}
             />
             <button
-              className="border-1 border-gray-400 bg-gray-200 font-lg py-2 px-1"
+              className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800"
               onClick={() => {
                 const SearchfilterResaurant = restaurants.filter((res) => {
                   // convert into lowercase - case insensitive search
@@ -83,7 +83,7 @@ const Body = () => {
           </div>
           <div>
             <button
-              className="border-1 border-gray-400 bg-gray-200 font-lg py-2 px-1 ml-5"
+              className="flex justify-center items-center text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800"
               onClick={() => {
                 const restaurantFilterData = filteredResaurantList.filter(
                   (res) => {
@@ -97,7 +97,7 @@ const Body = () => {
             </button>
           </div>
         </div>
-        <div className="flex flex-wrap gap-5 mt-5 py-4 ml-20 mr-10">
+        <div className="flex flex-wrap gap-5 mt-5 py-4 ml-20 mr-20">
           {filteredResaurantList.map((restaurant) => (
             <RestaurantCard
               key={restaurant.info.id}
