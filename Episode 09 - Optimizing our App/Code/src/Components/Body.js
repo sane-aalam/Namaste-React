@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import SimmerEffect from "./SimmerEffect";
-import React from "react";
 
 // You have to maintain the state of the filtered data, so that the data is not lost when the user searches for a restaurant or filters the data
 // concepts(copy data only changed not original data is changed!)

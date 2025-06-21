@@ -32,6 +32,8 @@ const Header = () => {
     }
   };
 
+  console.log("header render!")
+
   return (
     <div className="wrapperHeader">
       <div className="Header">
