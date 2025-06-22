@@ -53,15 +53,16 @@ const Body = () => {
     return <SimmerEffect />;
   } else
     return (
-      <div className="mr-5 ml-5">
+      <div className="mr-5 ml-5 ">
         <div className="flex justify-center gap-5 items-center m-4 ml-20 mr-20 ">
           <div className="">
             <input
               type="text"
               name=""
-              className="border-2 py-2 px-1 ml-5 mr-5 text-1xl"
+              className="border-2 border-gray-800 py-2 px-1 ml-5 mr-5 text-1x font-bold"
+              placeholder="Enter name of resturants.."
               value={searchText}
-              onChange={(e) => {
+              onChange={(e) => { 
                 setSearchText(e.target.value);
               }}
             />
