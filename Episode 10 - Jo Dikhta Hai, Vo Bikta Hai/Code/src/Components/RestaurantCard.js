@@ -4,6 +4,7 @@ import { CDN_URL } from "../Utils/CommonFile";
 const RestaurantCard = (props) => {
   // object Destructuring (props manage!)
   const { restaurantData } = props;
+
   const {
     cloudinaryImageId,
     name,
@@ -14,10 +15,10 @@ const RestaurantCard = (props) => {
     deliveryTime,
   } = restaurantData?.info;
 
-  console.log(deliveryTime);
+  console.log(restaurantData.info.id);
 
   return (
-    <div className="bg-gray-200 p-4">
+    <div className="bg-gray-200 pt-6 pb-6 pl-3 pr-3">
       <div className="rounded-sm">
         <img
           src={CDN_URL + cloudinaryImageId}

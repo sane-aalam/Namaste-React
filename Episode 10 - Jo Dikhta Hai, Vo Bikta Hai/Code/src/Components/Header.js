@@ -40,7 +40,9 @@ const Header = () => {
           <Link className="text-[#003d29] text-lg hover:border-b-2 border-b-[#003d29]">
             Swiggy CorLinkorate
           </Link>
-          <Link className="text-[#003d29] text-lg hover:border-b-2 border-b-[#003d29]">Offers</Link>
+          <Link className="text-[#003d29] text-lg hover:border-b-2 border-b-[#003d29]">
+            Offers
+          </Link>
           <Link
             to="about"
             className="text-[#003d29] text-lg hover:border-b-2 border-b-[#003d29]"

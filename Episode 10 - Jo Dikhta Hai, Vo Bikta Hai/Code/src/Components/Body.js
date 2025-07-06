@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import SimmerEffect from "./SimmerEffect";
+import { Link } from "react-router-dom";
 
 // You have to maintain the state of the filtered data, so that the data is not lost when the user searches for a restaurant or filters the data
 // concepts(copy data only changed not original data is changed!)
@@ -54,7 +55,7 @@ const Body = () => {
   } else
     return (
       <div className="mr-5 ml-5 ">
-        <div className="flex justify-center gap-5 items-center m-4 ml-20 mr-20 ">
+        <div className="flex justify-center flex-col md:flex-row md:item gap-5 items-center m-4 ml-20 mr-20 ">
           <div className="">
             <input
               type="text"
@@ -62,7 +63,7 @@ const Body = () => {
               className="border-2 border-gray-800 py-2 px-1 ml-5 mr-5 text-1x font-bold"
               placeholder="Enter name of resturants.."
               value={searchText}
-              onChange={(e) => { 
+              onChange={(e) => {
                 setSearchText(e.target.value);
               }}
             />
@@ -100,10 +101,13 @@ const Body = () => {
         </div>
         <div className="flex flex-wrap gap-5 mt-5 py-4 ml-20 mr-20">
           {filteredResaurantList.map((restaurant) => (
-            <RestaurantCard
-              key={restaurant.info.id}
-              restaurantData={restaurant}
-            />
+            <Link>
+              <RestaurantCard
+                key={restaurant.info.id}
+                to={"/restaurants/" + restaurant.info.id}
+                restaurantData={restaurant}
+              />
+            </Link>
           ))}
         </div>
       </div>

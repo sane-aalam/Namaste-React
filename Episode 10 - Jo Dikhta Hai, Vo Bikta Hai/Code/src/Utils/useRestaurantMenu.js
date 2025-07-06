@@ -7,6 +7,7 @@ import { MENU_URL } from "./CommonFile";
 const useRestaurantMenu = (resId) => {
   // state changable
   const [RestaurantInfo, setRestaurantInfo] = useState(null);
+
   useEffect(() => {
     fetchMenuData();
   }, []);
