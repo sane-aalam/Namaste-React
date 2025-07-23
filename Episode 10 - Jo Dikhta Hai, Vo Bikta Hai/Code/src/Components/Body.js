@@ -4,24 +4,15 @@ import RestaurantCard from "./RestaurantCard";
 import SimmerEffect from "./SimmerEffect";
 import { Link } from "react-router-dom";
 
-// You have to maintain the state of the filtered data, so that the data is not lost when the user searches for a restaurant or filters the data
-// concepts(copy data only changed not original data is changed!)
-// call by value
-// call by reference
-
 const Body = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [filteredResaurantList, setFilteredResaurantList] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  // useEffect() is a hook that takes a function and an array of dependencies as arguments.
-  // It calls the function whenever one of the dependencies changes.
   useEffect(() => {
     fetchSwiggyRealTimeData();
   }, []);
 
-  // The fetch() function in JavaScript initiates a network request and returns a Promise.
-  // This Promise resolves to a Response object if the request is successful.
   async function fetchSwiggyRealTimeData() {
     const url =
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=27.87960&lng=78.07620&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
