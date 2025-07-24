@@ -13,8 +13,6 @@ const RestaurantCard = (props) => {
     deliveryTime,
   } = restaurantData?.info;
 
-  console.log(name);
-
   return (
     <div className="bg-zinc-300 pt-6 pb-6 pl-3 pr-3">
       <div className="rounded-sm ">
