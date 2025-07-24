@@ -1,0 +1,34 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "description": "Swiggy-React-Application",
+  "main": "App.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Namaste-Reactjs"
+  },
+  "keywords": [
+    "javascript",
+    "react",
+    "node"
+  ],
+  "author": "Sane-Aalam",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "parcel": "^2.13.3",
+    "postcss": "^8.5.3",
+    "process": "^0.11.10",
+    "tailwindcss": "^4.1.0"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router": "^7.2.0",
+    "react-router-dom": "^6.30.1"
+  }
+}
