@@ -7,13 +7,30 @@ import ErrorPage from "./src/Components/ErrorPage";
 import RestaurantMenu from "./src/Components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Footer from "./src/Components/Footer";
+import { lazy, Suspense } from "react";
+
+/**
+ * Chunking
+ * Lazy Loading
+ * Code Splitting
+ * Dynamic Imports
+ * Dynamic Bundding
+ * Prefetching
+ * Suspense
+ * On-Demand Loading
+ */
+
+// step-1 Lazy load the component
+// step-2 Wrap lazy component in Suspense
+
+const About = lazy(() => import("./components/About"));
+const Body = lazy(() => import("./components/Body"));
 
 const AppLayout = () => {
   return (
     <>
       <Header />
       <Outlet />
-      {/* Divider */}
       <div className="border-t border-gray-200 my-5"></div>
       <Footer />
     </>
@@ -27,7 +44,12 @@ const appRounter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body />,
+        element: (
+          <Suspense>
+            fallback={<h1 className="text-3xl font-bold">Loading...</h1>}
+            <Body />
+          </Suspense>
+        ),
       },
       {
         path: "/about",
@@ -39,7 +61,12 @@ const appRounter = createBrowserRouter([
       },
       {
         path: "/restaurants/:resId",
-        element: <RestaurantMenu />,
+        element: (
+          <Suspense>
+            fallback={<h1 className="text-3xl font-bold">Loading...</h1>}
+            <RestaurantMenu />
+          </Suspense>
+        ),
       },
     ],
     errorElement: <ErrorPage />,

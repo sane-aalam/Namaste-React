@@ -1,19 +1,27 @@
 import { useRouteError } from "react-router-dom";
 
 const ErrorPage = () => {
-  // Add appropriate type here
-  const errorMassgae = useRouteError();
-  // console.log(errorMassgae) - complete infromation about error 404, which route all things
+  const err = useRouteError();
   return (
-    <div className="body404">
-      <div className="text">
-        <p>{errorMassgae.data}</p>
-        <p>{errorMassgae.status}</p>
-        <p>{errorMassgae.statusText}</p>
-        <h2>Couldn't launch :(</h2>
-        <h3>
-          Page Not Found - lets take you{" "}
-          <a href="http://localhost:1234/">BACK</a>
+    <div className="flex flex-col justify-center items-center h-[calc(100vh-40px)] gap-y-[10px] my-[20px]">
+      <div className="flex items-center justify-center">
+        <img
+          className="w-[90%] rounded-lg"
+          src="https://static.vecteezy.com/system/resources/thumbnails/023/257/307/original/delivery-break-bw-404-animation-fast-food-restaurant-worker-empty-state-4k-concept-footage-with-alpha-channel-transparency-monochromatic-error-flash-message-for-web-page-not-found-ui-design-video.jpg"
+          alt="Error Image"
+        />
+      </div>
+
+      <div className="flex flex-col items-center justify-center gap-y-[10px]">
+        <h1>Oops! Something Went Wrong!!</h1>
+        <h3 className="error-data">{err.data}</h3>
+        <h3 className="flex justify-center items-center gap-y-[10px]">
+          <Link
+            className="text-white bg-[#e46f20] p-[10px] font-semibold rounded-[8px] cursor-pointer hover:bg-[#016034] transition-all 0.3s ease-in-out"
+            to="/"
+          >
+            Back Home
+          </Link>
         </h3>
       </div>
     </div>
