@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./src/Components/Header";
 import Body from "./src/Components/Body";
@@ -7,21 +8,6 @@ import ErrorPage from "./src/Components/ErrorPage";
 import RestaurantMenu from "./src/Components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Footer from "./src/Components/Footer";
-import { lazy, Suspense } from "react";
-
-/**
- * Chunking
- * Lazy Loading
- * Code Splitting
- * Dynamic Imports
- * Dynamic Bundding
- * Prefetching
- * Suspense
- * On-Demand Loading
- */
-
-// step-1 Lazy load the component
-// step-2 Wrap lazy component in Suspense
 
 const About = lazy(() => import("./src/Components/About"));
 const Body = lazy(() => import("./src/Components/Body"));
@@ -47,7 +33,6 @@ const appRounter = createBrowserRouter([
         path: "/",
         element: (
           <Suspense>
-            fallback={<h1 className="text-3xl font-bold">Loading...</h1>}
             <Body />
           </Suspense>
         ),
@@ -64,7 +49,6 @@ const appRounter = createBrowserRouter([
         path: "/restaurants/:resId",
         element: (
           <Suspense>
-            fallback={<h1 className="text-3xl font-bold">Loading...</h1>}
             <RestaurantMenu />
           </Suspense>
         ),
