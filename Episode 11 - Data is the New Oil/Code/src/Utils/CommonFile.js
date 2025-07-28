@@ -2,7 +2,7 @@
 // It is good pratice to put all Name Capital Letter
 
 export const LOGO_URL =
-  "https://mms.businesswire.com/media/20201011005092/en/829342/4/Food-e_logo_black.jpg?download=1";
+  "https://static.vecteezy.com/system/resources/previews/020/275/077/non_2x/food-delivery-icon-for-your-website-design-logo-app-ui-free-vector.jpg";
 
 export const CDN_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";

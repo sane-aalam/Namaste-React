@@ -57,7 +57,7 @@ class UserClass extends Component {
     }
 
     return (
-      <div className="user-class">
+      <div className="border-2 border-zinc-600 p-4">
         <h1>Name: {name}</h1>
         <p>Location: {location}</p>
         <p>Contact: {contact}</p>

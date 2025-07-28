@@ -6,12 +6,16 @@ import Contact from "./src/Components/Contact";
 import ErrorPage from "./src/Components/ErrorPage";
 import RestaurantMenu from "./src/Components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Footer from "./src/Components/Footer";
 
 const AppLayout = () => {
   return (
     <>
       <Header />
       <Outlet />
+      {/* Divider */}
+      <div className="border-t border-gray-200 my-5"></div>
+      <Footer />
     </>
   );
 };

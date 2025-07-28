@@ -20,7 +20,7 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   return (
-    <div className="w-[99vw] h-[110px] bg-white">
+    <div className="w-[99vw] h-[120px] bg-white">
       <div className="flex justify-between content-center items-center bg-white h-[109px] ml-10 mr-10">
         <div className="w-1xl pl-15">
           <img
@@ -45,7 +45,7 @@ const Header = () => {
             About Us
           </Link>
           <Link
-            to="/contactus"
+            to="/contact"
             className="text-zinc-900 text-sm md:text-base lg:text-lg hover:border-b-2 border-zinc-700"
           >
             Contact Us
@@ -57,8 +57,8 @@ const Header = () => {
             {onlineStatus ? "🟢 online" : "🔴 offline"}
           </p>
           <button
-            className=" bg-zinc-800 text-white text-sm md:text-base lg:text-lg hover:bg-white hover:border-2 
-             hover:border-zinc-700 hover:text-zinc-700 dark:bg-zinc-700 font-bold py-2 px-4 rounded"
+            className="bg-zinc-900 text-white text-sm md:text-base lg:text-lg hover:bg-white hover:border-2 
+             hover:border-zinc-700 hover:text-zinc-800 dark:bg-zinc-800 font-bold py-2 px-4 rounded"
             onClick={() => buttonModification()}
           >
             {LoginToggleButton}
