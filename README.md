@@ -11,7 +11,7 @@ Before you begin your React journey, here are a few important guidelines:
 - Take your time to understand each concept before moving forward.
 - Experiment with the code as you learn, and feel free to adapt the lessons to your own needs.
 
-<img src="https://do6gp1uxl3luu.cloudfront.net/banner+and+logos/nrw.webp">
+<img src="https://media.licdn.com/dms/image/v2/D4D22AQFSx8E0RBNayw/feedshare-shrink_800/feedshare-shrink_800/0/1670766947261?e=2147483647&v=beta&t=ZVSFlfcx8jraBA-iyxOc5SlJH43CPExa_EraZTU5RPE">
 
 ---
 
