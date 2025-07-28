@@ -18,7 +18,7 @@ const Body = () => {
 
   async function fetchSwiggyRealTimeData() {
     const response = await fetch(
-      "https://cors-handlers.vercel.app/api/?url=https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Fis-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING%26lat=28.7040592%26lng=77.1024901" 
+      "https://cors-handlers.vercel.app/api/?url=https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Fis-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING%26lat=28.7040592%26lng=77.1024901"
     );
     const jsonData = await response.json();
 
@@ -32,17 +32,15 @@ const Body = () => {
         ?.restaurants
     );
 
-    const consoleData =
-      jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
-    console.log(consoleData);
+    // const consoleData = jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    // console.log(consoleData);
   }
 
   if (restaurants.length == 0) {
     return <SimmerEffect />;
   } else
     return (
-      <div className="mr-5 ml-5">
+      <div className="mr-5 ml-5 mt-10">
         <div className="flex justify-end flex-col md:flex-row md:item gap-5 items-center m-4 ml-20 mr-20 ">
           <div className="">
             <input

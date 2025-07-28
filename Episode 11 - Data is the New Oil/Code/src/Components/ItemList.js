@@ -1,7 +1,7 @@
 import { CDN_URL } from "../Utils/CommonFile";
 
 const ItemList = ({ items }) => {
-  console.log(items);
+  // console.log(items);
   return (
     <div>
       {items.map((item, index) => (

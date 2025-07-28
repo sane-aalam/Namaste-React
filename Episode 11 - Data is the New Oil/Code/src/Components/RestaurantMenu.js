@@ -3,10 +3,16 @@ import useRestaurantMenu from "../Utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 import RestaurantCategoryHeader from "./RestaurantCategoryHeader";
 import SimmerCategoriesEffect from "./SimmerCategoriesEffect";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
+
+  // data fetching or state management
   const restaurantInfo = useRestaurantMenu(resId);
+
+  // showCard or not show card
+  const [showIndex, setShowIndex] = useState(0);
 
   if (restaurantInfo === null) {
     return <SimmerCategoriesEffect />;
@@ -36,11 +42,16 @@ const RestaurantMenu = () => {
       <div>
         <RestaurantCategoryHeader data={topbarData} key={topbarData.id} />
       </div>
+      {/* Controlled Component */}
       <div>
         {FilterCategories.map((category, index) => (
           <RestaurantCategory
             key={category?.card?.card?.categoryId}
             data={category?.card?.card}
+            showIndex={index == showIndex ? true : false}
+            setShowIndex={() =>
+              setShowIndex((prevIndex) => (prevIndex === index ? null : index))
+            }
           />
         ))}
       </div>
