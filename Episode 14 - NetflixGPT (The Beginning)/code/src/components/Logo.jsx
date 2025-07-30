@@ -6,10 +6,10 @@ function Logo() {
             <img
                 src="https://netflixgpt-73521.web.app/assets/logo-396f00a4.png"
                 alt="logo"
-                className="w-48"
+                className="w-40"
             />
         </div>
     );
 }
 
-export default Logo;
+export default Logo;    
