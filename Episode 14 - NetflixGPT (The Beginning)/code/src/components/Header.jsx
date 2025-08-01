@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useRef } from "react";
 import Logo from "./Logo";
 import { FormDataValidation } from "../utils/FormDataValidation";
@@ -7,15 +7,21 @@ const Header = () => {
     const [isSignInForm, setIsSignInForm] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null);
 
-    const email = useRef(null);
-    const password = useRef(null);
+    const email = useRef<HTMLInputElement>(null);
+    const password = useRef<HTMLInputElement>(null);
 
     const handleAuthClick = () => {
-        const enteredEmail = email.current?.value;
-        const enteredPassword = password.current?.value;
-        console.log(enteredEmail, enteredPassword);
+        const enteredEmail = email.current!.value;
+        const enteredPassword = password.current!.value;
+
+        // debug the code
+        console.log("Email:", enteredEmail);
+        console.log("Password:", enteredPassword);
+
         const massage = FormDataValidation(enteredEmail, enteredPassword);
-        console.log(massage);
+        if (massage) {
+            return;
+        }
     };
 
     const toggleSignInForm = () => {
@@ -50,14 +56,12 @@ const Header = () => {
                     <input
                         type="email"
                         ref={email}
-                        name="email"
                         placeholder="Email"
                         className="p-3 w-full rounded bg-zinc-800 text-white placeholder-gray-400 outline-1 focus:ring-2 focus:ring-white"
                     />
                     <input
                         type="password"
                         ref={password}
-                        name="password"
                         placeholder="Password"
                         className="p-3 w-full rounded bg-zinc-800 text-white placeholder-gray-400 outline-1 focus:ring-2 focus:ring-white"
                     />
