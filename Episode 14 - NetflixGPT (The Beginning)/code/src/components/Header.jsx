@@ -3,16 +3,20 @@ import { useRef } from "react";
 import Logo from "./Logo";
 import { FormDataValidation } from "../utils/FormDataValidation";
 
+//* fibebase
+// createUserWithEmailAndPassword(auth, email, password)
+// signInWithEmailAndPassword(auth, email, password)
+
 const Header = () => {
     const [isSignInForm, setIsSignInForm] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null);
 
-    const email = useRef<HTMLInputElement>(null);
-    const password = useRef<HTMLInputElement>(null);
+    const email = useRef(null);
+    const password = useRef(null);
 
     const handleAuthClick = () => {
-        const enteredEmail = email.current!.value;
-        const enteredPassword = password.current!.value;
+        const enteredEmail = email.current?.value;
+        const enteredPassword = password.current?.value;
 
         // debug the code
         console.log("Email:", enteredEmail);
@@ -22,6 +26,7 @@ const Header = () => {
         if (massage) {
             return;
         }
+        setErrorMessage(massage);
     };
 
     const toggleSignInForm = () => {
