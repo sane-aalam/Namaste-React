@@ -32,8 +32,10 @@ const Body = () => {
         ?.restaurants
     );
 
-    // const consoleData = jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-    // console.log(consoleData);
+    const consoleData =
+      jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
+    console.log(consoleData);
   }
 
   if (restaurants.length == 0) {
