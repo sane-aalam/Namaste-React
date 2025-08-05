@@ -1,7 +1,15 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../Utils/CommonFile";
+import { addItems } from "../Utils/cartSlice";
 
 const ItemList = ({ items }) => {
-  // console.log(items);
+  // logic of reduxtoolkits
+  // dispatch has action(according to use) - [addItems,clearItems,removedItems]
+  const dispatch = useDispatch();
+  const addToCardItemsHandler = (item) => {
+    dispatch(addItems(item));
+  };
+
   return (
     <div>
       {items.map((item, index) => (
@@ -24,7 +32,10 @@ const ItemList = ({ items }) => {
           </div>
           <div className="w-3/12 px-2">
             <div className="flex justify-center">
-              <button className="absolute p-1 md:p-2 bg-black text-white rounded-lg shadow-lg">
+              <button
+                className="absolute p-1 md:p-2 bg-black text-white rounded-lg shadow-lg"
+                onClick={() => addToCardItemsHandler(item)}
+              >
                 Add +
               </button>
             </div>
