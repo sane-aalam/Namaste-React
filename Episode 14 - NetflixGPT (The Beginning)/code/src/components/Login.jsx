@@ -15,6 +15,10 @@ const Login = () => {
     const email = useRef(null);
     const password = useRef(null);
 
+    // Handle authentication click 
+    // This function handles both sign up and sign in
+    // based on the state of isSignInForm
+
     const handleAuthClick = () => {
         console.log("clicked button!")
         const userName = name.current?.value;
