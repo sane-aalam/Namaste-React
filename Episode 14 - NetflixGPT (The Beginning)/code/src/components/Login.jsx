@@ -6,7 +6,9 @@ import { FormDataValidation } from "../utils/FormDataValidation";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/Firebase"
 
-
+//* Handle authentication click 
+//* This function handles both sign up and sign in
+//* based on the state of isSignInForm
 const Login = () => {
     const [isSignInForm, setIsSignInForm] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null);
@@ -15,17 +17,11 @@ const Login = () => {
     const email = useRef(null);
     const password = useRef(null);
 
-    // Handle authentication click 
-    // This function handles both sign up and sign in
-    // based on the state of isSignInForm
-
     const handleAuthClick = () => {
         console.log("clicked button!")
         const userName = name.current?.value;
         const enteredEmail = email.current?.value;
         const enteredPassword = password.current?.value;
-
-        console.log(userName, enteredEmail, enteredPassword)
 
         const massage = FormDataValidation(enteredEmail, enteredPassword);
         console.log(massage)
