@@ -7,7 +7,7 @@ const userSlice = createSlice({
     addUser: (state, action) => {
       return action.payload;
     },
-    removeUser: (state, action) => {
+    removeUser: (state) => {
       return null;
     },
   },
@@ -17,6 +17,7 @@ export const { addUser, removeUser } = userSlice.actions;
 
 export default userSlice.reducer;
 
+// userSlice connnect with appStore(mainReducer)
 // Redux Toolkit allows us to write "mutating" logic in reducers. It
 // doesn't actually mutate the state because it uses the Immer library,
 // which detects changes to a "draft state" and produces a brand new
